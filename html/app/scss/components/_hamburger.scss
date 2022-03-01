@@ -1,0 +1,16 @@
+@use "config" as *;
+
+.hamburger {
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   padding: 0;
+   height: var(--size-nav-icon);
+      aspect-ratio: 1;
+   // display: flex;
+   // padding: 0;
+   
+   // align-items: center;
+
+
+}
