@@ -1,4 +1,8 @@
+@use "config" as *;
+
 .header-main {
+   
+
    &__nav {
       position: fixed;
       top: 0;
@@ -8,4 +12,6 @@
       padding-top: var(--padding-aside);
       z-index: 9999;
    }
+
+   
 }

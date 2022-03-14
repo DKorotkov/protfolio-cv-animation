@@ -1,4 +1,7 @@
+@use 'config' as *;
+
 .page-main {
    background-color: var(--color-black);
    color: var(--color-white);
+   min-width: rem(320);
 }

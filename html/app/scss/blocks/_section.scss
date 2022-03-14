@@ -1,31 +1,58 @@
 @use "config" as *;
+
 .section {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   height: 100vh;
-   overflow: hidden;
+  @include media('<=phone') {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100vh;
+  }
 
-   &__img-wrapper--fixed {
-     position: fixed;
-     top: 0;
-     right: 0;
-     bottom: 0;
-     left: 50%;
-   }
 
-   &__img {
+  @include media('>phone') { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &__img-wrapper {
+      @include media('<=phone') {
+        flex-basis: 50%;
+      }
+  }
+
+  &__img-wrapper--fixed {
+      position: fixed;
+      top: 0;
+      right: 0;
+      @include media ('<=phone') {
+        left: 0;
+      }
+      @include media ('>phone') {
+        bottom: 0;
+        left: 50%;
+      }
+    }
+   
+&__img {
      display: block;
    
-     height: 100vh;
+     
      width: 100%;
-   }
 
+     @include media('<=phone') { 
+       height: 50vh;
+     }
+     @include media('>phone') { 
+      height: 100vh;
+     }
+   }
    
 }
 
-.section2 {
-  background-color: silver;
-}
+// .section2 {
+//   background-color: silver;
+// }
 
 .wrapper {
   position: relative;

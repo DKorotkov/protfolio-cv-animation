@@ -13,10 +13,21 @@
 	right: 0;
 	left: 0;
 	background-color: var(--color-black);
-	padding: rem(50) 0 ;
+	// padding: rem(50) 0;
 	padding-left: min(20% + 1.25rem,9.375rem);
 	transform: translateY(-100%);
 	transition: transform 0.3s ease;
+
+	@include media ('<=phone') {
+		padding-top: rem(80);
+		padding-bottom: rem(40);
+		// padding-left: min(20% + 1.25rem,9.375rem);
+	}
+
+	@include media ('>phone') {
+		padding: rem(50) 0;
+		padding-left: min(20% + 1.25rem,9.375rem);
+	}
 
 	&--active {
 		transform: translateY(0);

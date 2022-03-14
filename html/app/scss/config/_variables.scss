@@ -1,4 +1,4 @@
-// @use "config" as *;
+@use "include-media" as *;
 // -----------------------------------------ПЕРЕМЕННЫЕ-----------------------------------------------
 
 //Точки в bootstrap sm-540px	md-720px	lg-960px	xl-1140px
@@ -15,7 +15,7 @@
 :root {
    --minWidth: 320px;
    --maxWidth: 1140px;
-}
+} 
 
 // ____________________Брейкпоинты__________________________________
 // $md0: 520;
@@ -72,8 +72,16 @@
 
    --size-navigation-small: 3.75rem;
    --size-navigation-large: 4.5rem;
-   --size-nav-icon: 2rem;
+   
 
    --padding-aside: var(--space-lg);
 
+   @include media ('<=phone') {
+      --size-nav-icon: 4rem;
+      --padding-aside: var(--space-sm);
+   }
+   @include media ('>phone') {
+      --size-nav-icon: 2rem;
+      --padding-aside: var(--space-lg);
+   }
 }

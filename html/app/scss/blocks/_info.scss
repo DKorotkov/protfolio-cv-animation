@@ -7,25 +7,61 @@
    padding-left: min(calc(20% + rem(20)), rem(150));
    z-index: 100;
 
-		&__title {
+   @include media ('<=phone') {
+      transform: translateY(-30%);
+      flex-basis: 50%;
+   }
+
+   @media (max-height: 500px) and (orientation: landscape) { 
+      transform: translateY(0);
+   }
+
+   &__title {
+      @include media ('>phone') {
          display: grid;
          position: absolute;
          top: 0;
-		}
+      }
+   }
 
       &__maintitle {
-         width: max-content;
+
+        
          @include font-size(82px);
+
+          @include media ("<=phone") {
+            display: block;
+            line-height: 1.25;
+         }
+          @include media (">phone") {
+            width: max-content;
+         }
+
       }
 
 		&__subtitle {
          @include font-size(28px);
-         
+         @include media ("<=phone") {
+            display: block;
+            line-height: 1.25;
+            padding-bottom: rem(20);
+         }
 		}
 
 		&__desc {
-         padding-top: min(calc(25% + rem(60)), rem(180));
          padding-bottom: min(calc(10% + rem(30)), rem(100));
+
+         @include media ("<=phone") {
+            padding-top: rem(70);
+         }
+         @include media (">phone") {
+            padding-top: min(calc(25% + rem(60)), rem(180));
+         }
+
+         @media (max-height: 500px) and (orientation: landscape) { 
+            padding-top: min(calc(25% + rem(80)), rem(180));
+            padding-bottom: min(calc(5% + rem(10)), rem(30));
+         }
 		}
 
 		&__link {
