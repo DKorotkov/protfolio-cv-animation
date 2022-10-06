@@ -1,0 +1,40 @@
+@use "config" as *;
+
+.arrow {
+   display: flex;
+   align-items: center;
+   --arrow-height: 0.125rem;
+   --arrow-width: 3rem;
+   cursor: pointer;
+   height: rem(20);
+   // padding: 0 rem(10);
+   background-color: transparent;
+   border: none;
+   padding: 0;
+
+   &::after {
+      content: '';
+      display: block;
+      background-color: var(--color-white);
+      width: var(--arrow-width);
+      height: var(--arrow-height);
+      transition: all 0.2s;
+   }
+
+   &::before {
+      content: '';
+      display: block;
+      // position: absolute;
+      // left: -10px;
+      // top: 25%;
+      border: calc(var(--arrow-height) * 2) solid transparent; 
+      border-right: calc(var(--arrow-height) * 2) solid var(--color-white);
+      transition: all 0.2s;
+
+   }
+
+   // &:hover::before,
+   &:hover::after {
+      width: calc(var(--arrow-width) * 1.3);
+   }
+}

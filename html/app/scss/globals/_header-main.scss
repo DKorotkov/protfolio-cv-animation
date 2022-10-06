@@ -1,0 +1,17 @@
+@use "config" as *;
+
+.header-main {
+   
+
+   &__nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      // right: 0;
+      padding-left: var(--padding-aside);
+      padding-top: var(--padding-aside);
+      z-index: 9999;
+   }
+
+   
+}
